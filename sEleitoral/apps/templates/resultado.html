@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+    <link rel="stylesheet" href="/static/styles/resultado.css">
+    <script src="https://code.highcharts.com/dashboards/dashboards.js"></script>
+</head>
+
+<body>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+    <figure class="highcharts-figure">
+        <div id="container"></div>
+    </figure>
+    <script>
+        const vereadores = JSON.parse('{{ vereadores|safe }}');
+    </script>
+    <script src="/static/scripts/resultado.js"></script>
+</body>
+
+</html>

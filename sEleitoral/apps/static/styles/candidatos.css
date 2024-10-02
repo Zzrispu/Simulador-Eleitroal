@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: x-large;
+}
+
+nav a {
+    color: white;
+    letter-spacing: 4px;
+    text-decoration: none;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #e23636 45%, #0476f2 55%);
+}
+
+.prefeitos-conteiner {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    height: 50%;
+    max-height: 50vh;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.candidatos-conteiner {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    height: 50%;
+    max-height: 50vh;
+    align-items: center;
+}
+
+.candidate-div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 225px;
+    height: 330px;
+    max-height: fit-content;
+    background-color: white;
+    overflow-y: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+.candidate-div img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+}
+
+.candidate-div h2 {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.candidate-div h3 {
+    display: flex;
+    justify-content: center;
+    letter-spacing: 3px;
+    font-weight: 800;
+}
+
+.candidate-div h4 {
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.candidate-div:hover {
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.candidate-div::-webkit-scrollbar {
+    display: none;
+}

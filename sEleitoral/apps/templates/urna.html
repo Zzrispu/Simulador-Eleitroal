@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urna</title>
+    <link rel="stylesheet" href="{% static 'styles/urna.css' %}">
+    <script src="https://kit.fontawesome.com/d4228d7768.js" crossorigin="anonymous"></script>
+    <script>
+        const candidatos = JSON.parse('{{ context|safe }}');
+    </script>
+</head>
+
+<body>
+    <nav style="background-color: black; width: 100%; height: 6vh;">
+        <a href="/">CANDIDATOS</a>
+        <a href="/urna">VOTAR</a>
+        <a href="/resultado">RESULTADO</a>
+    </nav>
+    <main>
+        <div id="urna-conteiner">
+            <div class="lado-esquerdo">
+                <div class="tela">
+                    <h3 id="display-text" style="font-size: xx-large; letter-spacing: 5px;"></h3>
+                    <div id="img-div">
+                    </div>
+                    <div id="cells-conteiner">
+                    </div>
+                    <input type="text" id="digits-input" style="opacity: 0; position: absolute;"></input>
+                    <div style="position: absolute; left: 5px; bottom: 30%;">
+                        <label for="nome">Nome:</label>
+                        <span id="nome"></span>
+                    </div>
+                    <div style="position: absolute; left: 5px; bottom: 24%;">
+                        <label for="partido">Partido:</label>
+                        <span id="partido"></span>
+                    </div>
+                    <div style="position: absolute; bottom: 0; width: 100%; height: 18%; border-top: 2px black dotted; justify-content: start; display: grid; grid-template-areas: 'label none none none''none1 line1 line1 none2''none1 line2 line2 none2';">
+                        <label style="grid-area: label; align-self: flex-end; margin-left: 5px;">Aperte a tecla:</label>
+                        <span style="grid-area: line1; align-self: flex-start;">CONFIRMA para PROSSEGUIR</span>
+                        <span style="grid-area: line2; align-self: flex-start;">CORRIGE para REINICIAR este voto</span>
+                    </div>
+                </div>
+            </div>
+            <div class="lado-direito">
+                <div id="teclado" class="teclado">
+                    <div class="teclado-numerico"></div>
+                    <div class="acoes" id="acoes">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="{% static 'scripts/urna.js' %}"></script>
+</body>
+
+</html>
